@@ -1,6 +1,6 @@
 local common_measures = import 'common_measures.jsonnet';
 
-local all_event_props = std.extVar('custom_event_schema') || [];
+local all_event_props = if std.extVar('custom_event_schema') != null then std.extVar('custom_event_schema') else [];
 local unique_events = std.uniq(std.sort(std.map(function(attr) attr.event_name, all_event_props)));
 
 std.map(function(event_type)
