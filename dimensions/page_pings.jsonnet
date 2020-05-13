@@ -2,7 +2,7 @@
   pp_xoffset_min: {
     description: 'Minimum page x offset seen in the last ping period',
     column: 'pp_xoffset_min',
-    label: 'Min X'
+    label: 'Min X',
     category: 'Page pings',
   },
   pp_xoffset_max: {
