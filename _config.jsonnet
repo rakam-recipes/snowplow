@@ -21,7 +21,7 @@
     },
     custom_event_schema: {
       type: 'sql',
-      parent: 'schema',
+      parent: 'events',
       required: false,
       description: 'You can run the query above in order to add your custom events as models',
       options: {
