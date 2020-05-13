@@ -10,46 +10,23 @@
     category: 'Application',
   },
   collector_tstamp: {
+    label: 'Server Time',
     description: 'Time stamp for the event recorded by the collector',
     column: 'collector_tstamp',
     category: 'Date/time',
     type: 'timestamp',
-    timeframes: [
-      'hour',
-      'day',
-      'week',
-      'month',
-      'year',
-      'hourOfDay',
-      'dayOfMonth',
-      'weekOfYear',
-      'monthOfYear',
-      'quarterOfYear',
-      'dayOfWeek',
-    ],
   },
   dvce_created_tstamp: {
     description: 'Timestamp event was recorded on the client device',
+    label: 'Client Timestamp',
     column: 'dvce_created_tstamp',
     category: 'Date/time',
     type: 'timestamp',
-    timeframes: [
-      'hour',
-      'day',
-      'week',
-      'month',
-      'year',
-      'hourOfDay',
-      'dayOfMonth',
-      'weekOfYear',
-      'monthOfYear',
-      'quarterOfYear',
-      'dayOfWeek',
-    ],
   },
   dvce_sent_tstamp: {
     description: 'When the event was sent by the client device',
     column: 'dvce_sent_tstamp',
+    label: 'Client Sent At',
     category: 'Date/time',
     type: 'timestamp',
     timeframes: [
@@ -69,6 +46,7 @@
   etl_tstamp: {
     description: 'Timestamp event began ETL',
     column: 'etl_tstamp',
+    label: 'ETL Time',
     category: 'Date/time',
     type: 'timestamp',
     timeframes: [
@@ -88,19 +66,21 @@
   os_timezone: {
     description: 'Client operating system timezone',
     column: 'os_timezone',
+    label: 'Timezone',
     category: 'Date/time',
   },
   derived_tstamp: {
     description: 'Timestamp making allowance for innaccurate device clock',
     column: 'derived_tstamp',
+    label: 'Event Timestamp',
     category: 'Date/time',
   },
   true_tstamp: {
+    label: 'User Timestamp',
     description: 'User-set "true timestamp" for the event',
     column: 'true_tstamp',
     category: 'Date/time',
   },
-
   event: {
     description: 'The type of event recorded',
     column: 'event',
@@ -112,28 +92,30 @@
     category: 'Event/transaction',
   },
   txn_id: {
+    hidden: true,
     description: 'Transaction ID set client-side, used to de-dupe records',
     column: 'txn_id',
+    label: 'Transaction ID',
     category: 'Event/transaction',
   },
   event_fingerprint: {
+    hidden: true,
     description: 'Hash client-set event fields',
     column: 'event_fingerprint',
     category: 'Event/transaction',
   },
-
   v_tracker: {
-    description: 'Tracker version',
+    label: 'Tracker version',
     column: 'v_tracker',
     category: 'Snowplow version',
   },
   v_collector: {
-    description: 'Collector version',
+    label: 'Collector version',
     column: 'v_collector',
     category: 'Snowplow version',
   },
   v_etl: {
-    description: 'ETL version',
+    label: 'ETL version',
     column: 'v_etl',
     category: 'Snowplow version',
   },
@@ -156,30 +138,35 @@
   domain_userid: {
     description: 'User ID set by Snowplow using 1st party cookie',
     column: 'domain_userid',
+    label: 'Domain User ID',
     category: 'User-related',
   },
   network_userid: {
     description: 'User ID set by Snowplow using 3rd party cookie',
     column: 'network_userid',
+    label: 'Network User ID',
     category: 'User-related',
   },
   user_ipaddress: {
     description: 'User IP address',
     column: 'user_ipaddress',
+    label: 'IP Address',
     category: 'User-related',
   },
   domain_sessionidx: {
     description: 'A visit / session index',
     column: 'domain_sessionidx',
+    label: 'Session Count',
     category: 'User-related',
   },
   domain_sessionid: {
     description: 'A visit / session identifier',
     column: 'domain_sessionid',
     category: 'User-related',
+    label: 'Session ID',
   },
-
   useragent: {
+    hidden: true,
     description: 'Raw useragent',
     column: 'useragent',
     category: 'Device and operating system',
@@ -187,74 +174,89 @@
   dvce_type: {
     description: 'Type of device',
     column: 'dvce_type',
+    label: 'Device Type',
     category: 'Device and operating system',
   },
   dvce_ismobile: {
     description: 'Is the device mobile?',
     column: 'dvce_ismobile',
+    label: 'Is Mobile',
     category: 'Device and operating system',
   },
   dvce_screenheight: {
     description: 'Screen height in pixels',
     column: 'dvce_screenheight',
+    label: 'Screen Height',
     category: 'Device and operating system',
   },
   dvce_screenwidth: {
     description: 'Screen width in pixels',
     column: 'dvce_screenwidth',
+    label: 'Screen Width',
     category: 'Device and operating system',
   },
   os_name: {
     description: 'Name of operating system',
     column: 'os_name',
+    label: 'OS Name',
     category: 'Device and operating system',
   },
   os_family: {
     description: 'Operating system family',
     column: 'os_family',
+    label: 'OS Family',
     category: 'Device and operating system',
   },
   os_manufacturer: {
     description: 'Company responsible for OS',
     column: 'os_manufacturer',
+    label: 'Manufacturer',
     category: 'Device and operating system',
   },
   geo_country: {
     description: 'ISO 3166-1 code for the country the visitor is located in',
     column: 'geo_country',
+    label: 'Country',
     category: 'Location',
   },
   geo_region: {
     description: 'ISO-3166-2 code for country region the visitor is in ',
     column: 'geo_region',
+    label: 'Region',
     category: 'Location',
   },
   geo_city: {
     description: 'City the visitor is in',
     column: 'geo_city',
+    label: 'City',
     category: 'Location',
   },
   geo_zipcode: {
     description: 'Postcode the visitor is in',
+    label: 'Zipcode',
     column: 'geo_zipcode',
     category: 'Location',
   },
   geo_latitude: {
+    label: 'Latitude',
     description: 'Visitor location latitude',
     column: 'geo_latitude',
     category: 'Location',
   },
   geo_longitude: {
+    label: 'Longitude',
     description: 'Visitor location longitude',
     column: 'geo_longitude',
     category: 'Location',
   },
   geo_region_name: {
+    label: 'Region Name',
     description: 'Visitor region name',
     column: 'geo_region_name',
     category: 'Location',
   },
   geo_timezone: {
+    label: 'Timezone',
     description: 'Visitor timezone name',
     column: 'geo_timezone',
     category: 'Location',
@@ -262,10 +264,12 @@
 
   ip_isp: {
     description: "Visitor's ISP",
+    label: 'ISP',
     column: 'ip_isp',
     category: 'IP address-based',
   },
   ip_organization: {
+    label: 'Organization',
     description: "Organization associated with the visitor's IP address - defaults to ISP name if none is found",
     column: 'ip_organization',
     category: 'IP address-based',
@@ -277,6 +281,7 @@
   },
   ip_netspeed: {
     description: "Visitor's connection type",
+    label: 'Connection Type',
     column: 'ip_netspeed',
     category: 'IP address-based',
   },
