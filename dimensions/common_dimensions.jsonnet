@@ -219,7 +219,6 @@
     column: 'os_manufacturer',
     category: 'Device and operating system',
   },
-
   geo_country: {
     description: 'ISO 3166-1 code for the country the visitor is located in',
     column: 'geo_country',
@@ -281,15 +280,16 @@
     column: 'ip_netspeed',
     category: 'IP address-based',
   },
-
   event_vendor: {
     description: 'Who defined the event',
     column: 'event_vendor',
+    type: 'string',
     category: 'Metadata',
   },
   event_name: {
     description: 'Event name',
     column: 'event_name',
+    type: 'string',
     category: 'Metadata',
   },
   event_format: {

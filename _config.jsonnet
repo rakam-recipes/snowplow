@@ -7,7 +7,7 @@
     events: {
       label: 'Snowplow Events Table',
       type: 'table',
-      default: { schema: 'atomic', table: 'events' },
+      default: { schema: 'ATOMIC', table: 'events' },
     },
     dbt_snowplow_page_views: {
       label: 'DBT Pageview Table',
