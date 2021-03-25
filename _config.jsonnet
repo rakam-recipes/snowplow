@@ -26,7 +26,7 @@
       description: 'You can run the query above in order to add your custom events as models',
       options: {
         sql: |||
-          SELECT 'test' as event_db, 'test' as prop_db, 'test' as event_name, 'test' as name, 'string' as value_type
+          SELECT distinct se_category as "category", se_action as "se_action", event_name as "event_name" from events
         |||,
       },
     },

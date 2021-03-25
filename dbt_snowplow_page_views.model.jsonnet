@@ -386,18 +386,6 @@ if std.extVar('dbt_snowplow_page_views') == null then null else {
       column: 'page_view_start_local',
       category: 'Page View',
     },
-    /*page_view_time: {
-            column: 'page_view_time',
-      category: 'Page View',
-    },
-    page_view_week: {
-            column: 'page_view_week',
-      category: 'Page View',
-    },
-    page_view_year: {
-            column: 'page_view_year',
-      category: 'Page View',
-    },*/
 
     /* Referrer */
     referer_medium: {

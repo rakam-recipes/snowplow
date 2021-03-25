@@ -12,7 +12,7 @@ local common_measures = import 'common_measures.jsonnet';
   category: 'Snowplow Events',
   target: std.extVar('events'),
   mappings: {
-    eventTimestamp: 'dvce_sent_tstamp',
+    eventTimestamp: 'derived_tstamp',
     userId: 'user_id',
   },
   measures: common_measures,

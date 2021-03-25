@@ -1,5 +1,5 @@
 {
-  all_events: {
+  total_events: {
     aggregation: 'count',
   },
 }

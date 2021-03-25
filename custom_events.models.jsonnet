@@ -9,8 +9,13 @@ std.map(function(event_type)
 
   {
     name: 'snowplow_event_' + event_db_name,
-    target: std.mergePatch(std.extVar('events'), { table: event_db_name }),
+    target: std.extVar('events'),
     label: event_type,
+    mappings: {
+      eventTimestamp: 'dvce_sent_tstamp',
+      userId: 'user_id',
+    },
     category: 'Snowplow Events',
     measures: common_measures,
+    dimensions: common_dimensions,
   }, unique_events)
