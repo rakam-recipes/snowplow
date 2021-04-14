@@ -1,4 +1,5 @@
 local common_measures = import 'common_measures.jsonnet';
+local common_dimensions = import 'dimensions/common_dimensions.jsonnet';
 
 local all_event_props = if std.extVar('custom_event_schema') != null then std.extVar('custom_event_schema') else [];
 local unique_events = std.uniq(std.sort(std.map(function(attr) attr.EVENT_NAME, all_event_props)));
