@@ -13,7 +13,7 @@ std.map(function(event_type)
     name: 'snowplow_event_' + event_db_name,
     target: std.extVar('events'),
     alwaysFilters: [
-      { dimension: 'event_name', operator: 'equals', value: name, valueType: 'string' },
+      { dimension: 'event_name', operator: 'equals', value: name },
     ],
     label: event_type,
     mappings: {
