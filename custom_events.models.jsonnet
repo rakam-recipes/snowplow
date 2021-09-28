@@ -5,15 +5,14 @@ local all_event_props = if std.extVar('custom_event_schema') != null then std.ex
 
 std.map(function(current_event_props)
   local event_db_name = current_event_props.se_action;
-  local name = current_event_props.event_name;
 
   {
     name: 'snowplow_event_' + event_db_name,
     target: std.extVar('events'),
     alwaysFilters: [
-      { dimension: 'event_name', operator: 'equals', value: name },
+      { dimension: 'event_name', operator: 'equals', value: event_db_name },
     ],
-    label: name,
+    label: event_db_name,
     mappings: {
       eventTimestamp: 'dvce_sent_tstamp',
       userId: 'user_id',
