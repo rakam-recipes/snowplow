@@ -10,7 +10,7 @@ std.map(function(current_event_props)
     name: 'snowplow_event_' + event_db_name,
     target: std.extVar('events'),
     alwaysFilters: [
-      { dimension: 'event_name', operator: 'equals', value: event_db_name },
+      { dimension: 'se_action', operator: 'equals', value: event_db_name },
     ],
     label: event_db_name,
     mappings: {
