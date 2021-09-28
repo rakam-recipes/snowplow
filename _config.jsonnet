@@ -26,7 +26,7 @@
       description: 'You can run the query above in order to add your custom events as models',
       options: {
         sql: |||
-          SELECT distinct se_category as "category", se_action as "se_action", event_name as "event_name" from events
+          SELECT distinct se_category as "category", se_action as "se_action" from events
         |||,
       },
     },
