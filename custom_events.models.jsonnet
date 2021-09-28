@@ -13,7 +13,7 @@ std.map(function(current_event_props)
     alwaysFilters: [
       { dimension: 'event_name', operator: 'equals', value: name },
     ],
-    label: event_type,
+    label: name,
     mappings: {
       eventTimestamp: 'dvce_sent_tstamp',
       userId: 'user_id',
