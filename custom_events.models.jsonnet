@@ -2,12 +2,12 @@ local common_measures = import 'common_measures.jsonnet';
 local common_dimensions = import 'dimensions/common_dimensions.jsonnet';
 
 local all_event_props = if std.extVar('custom_event_schema') != null then std.extVar('custom_event_schema') else [];
-local unique_events = std.uniq(std.sort(std.map(function(attr) attr.EVENT_NAME, all_event_props)));
+local unique_events = std.uniq(std.sort(std.map(function(attr) attr.event_name, all_event_props)));
 
 std.map(function(event_type)
-  local current_event_props = std.filter(function(p) p.EVENT_NAME == event_type, all_event_props);
+  local current_event_props = std.filter(function(p) p.event_name == event_type, all_event_props);
   local event_db_name = current_event_props[0].EVENT_DB;
-  local name = current_event_props[0].EVENT_NAME;
+  local name = current_event_props[0].event_name;
 
   {
     name: 'snowplow_event_' + event_db_name,
